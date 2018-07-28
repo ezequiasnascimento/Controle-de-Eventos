@@ -12,7 +12,7 @@ while True:
         usuario = Usuario()
         usuario.criar_conta()
         usuarios.append(usuario)
-    if opcao == 2:
+    elif opcao == 2:
         print("Realizar login")
         cpf = input("CPF: ")
         senha = input("Senha : ")
@@ -21,7 +21,10 @@ while True:
                 print("logado com sucesso, aqui vai suceder os proximos metodos ")
             else:
                 print("Usuario não encontrado")
-    print("\n\n\n")
-    if opcao == 3:
-        print("Obrigado po usar o sistema")
+
+    elif opcao == 3:
+        print("Obrigado por usar o sistema")
         break
+    else:
+        print("Opção invalida !!!")
+    print("\n\n\n")
