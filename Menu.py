@@ -16,6 +16,7 @@ def Menu():
             participante = Participante()
             participante.criar_conta()
             usuarios[3].append(participante)
+
         elif opcao == 2:
             print("Realizar login")
             cpf = input("CPF: ")
@@ -23,6 +24,7 @@ def Menu():
             for x in usuarios:
                 if x.cpf == cpf and x.senha == senha:
                     print("logado com sucesso, aqui vai suceder os proximos metodos ")
+
                 else:
                     print("Usuario não encontrado")
 
