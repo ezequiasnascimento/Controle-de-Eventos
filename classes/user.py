@@ -1,41 +1,45 @@
-from classes.evento import remove_user_from_events
+from classes.event import remove_user_from_events
 
 
-class Usuario(object):
-    nome = None
+class User(object):
+    name = None
     cpf = None
-    endereco = None
-    data_nasc = None
-    senha = None
+    address = None
+    birth = None
+    password = None
 
-    def __init__(self, nome: object = None, cpf: object = None, endereco: object = None, data_nasc: object = None,
-                 senha: object = None) -> object:
-        self.nome = nome
+    def __init__(self,
+                 name: object = None,
+                 cpf: object = None,
+                 address: object = None,
+                 birth: object = None,
+                 password: object = None) -> object:
+
+        self.name = name
         self.cpf = cpf
-        self.endereco = endereco
-        self.data_nasc = data_nasc
-        self.senha = senha
+        self.address = address
+        self.birth = birth
+        self.password = password
 
-
-    def create_account(self, users ):
-        self.nome = input("Nome: ")
+    def create_account(self, users):
+        self.name = input("Nome: ")
         self.cpf = input("CPF: ")
+
         while verify_cpf(users, self.cpf):
             print("O CPF já está cadastrado tente novamente")
             self.cpf = input("CPF: ")
 
-        self.endereco = input("Endereço: ")
-        self.data_nasc = input("Data de Nascimento: ")
-        self.senha = input("Senha: ")
+        self.address = input("Endereço: ")
+        self.birth = input("Data de Nascimento: ")
+        self.password = input("Senha: ")
 
-    def change_data_user(self,users) -> object:
-        """
-        :type users: list
-        """
-        self.nome = input("Nome: ")
-        self.endereco = input("Endereço: ")
-        self.data_nasc = input("Data de Nascimento: ")
-        self.senha = input("Senha: ")
+    def change_data_user(self, users) -> object:
+        self.name = input("Nome: ")
+        self.address = input("Endereço: ")
+        self.birth = input("Data de Nascimento: ")
+        self.password = input("Senha: ")
+
+
 def verify_cpf(users, cpf):
     cpf_exists = False
     list_type = len(users)
@@ -67,7 +71,7 @@ def remove_user(users, events, cpf):
 
         i += 1
 
-    #TODO Código que realiza a procura do CPF em todos os eventos
+    # TODO Código que realiza a procura do CPF em todos os eventos
     remove_user_from_events(user, events)
 
     return user
@@ -83,7 +87,6 @@ def verify_event_adm_user_cpf(users, cpf):
                 break
     else:
         print("Não existem administradores de eventos cadastrados no sistema")
-
 
     return cpf_exists
 
@@ -114,7 +117,7 @@ def verify_user_and_password(users, cpf, password):
     while i <= list_type:
         list_users = users[i]
         for j in list_users:
-            if j.cpf == cpf and j.senha == password:
+            if j.cpf == cpf and j.password == password:
                 user_is_valid = True
                 break
 
@@ -132,7 +135,7 @@ def get_user_with_type(users, cpf, password):
     while i <= list_type:
         list_users = users[i]
         for j in list_users:
-            if j.cpf == cpf and j.senha == password:
+            if j.cpf == cpf and j.password == password:
                 user = j
                 user_type = i
                 break

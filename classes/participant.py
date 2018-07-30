@@ -1,5 +1,5 @@
 from classes.user import *
 
 
-class Admin_evento(User):
+class Participant(User):
     pass

@@ -1,17 +1,17 @@
-from classes.participantes import *
-from classes.admin_sistema import *
+from classes.participant import *
+from classes.user_admin import *
 from menus.menu_admin import menu_admin
 from menus.menu_event import event_admin
 from menus.menu_event_participant import event_participant
 
-usuarios = {1: [], 2: [], 3: []}
 # 1 referencia ao adiministrador do sistema
 # 2 referencia ao adiminustrador do evento
 # 3 referencia aos participantes
+users = {1: [], 2: [], 3: []}
 events = []
 
 
-def apresentacao():
+def main_menu():
     print("1 - Criar conta")
     print("2 - Realizar login")
     print("3 - Sair do sistema")
@@ -22,46 +22,44 @@ def define_admin():
         print("Bem vindo ao gerenciador de eventos!!!")
         print("No momento o sistema está sem um adiministrador")
         print("Por favor digite suas informações para adiministrar o sistema")
-        admin_sistema = Admin_sistema()
-        admin_sistema.create_account(usuarios)
-        usuarios[1].append(admin_sistema)
-        print("\n\n\n")
+        admin_sistema = UserAdmin()
+        admin_sistema.create_account(users)
+        users[1].append(admin_sistema)
+        print("")
         break
-
 
 
 def menu():
     while True:
-        apresentacao()
-        opcao = int(input())
+        main_menu()
+        option = int(input("Digite a opção: "))
 
-        if opcao == 1:
+        if option == 1:
             print("Criar Conta")
-            participante = Participante()
-            participante.create_account(usuarios)
-            usuarios[3].append(participante)
+            participante = Participant()
+            participante.create_account(users)
+            users[3].append(participante)
 
-        elif opcao == 2:
+        elif option == 2:
             print("Realizar login")
             cpf = input("CPF: ")
-            senha = input("Senha : ")
+            password = input("Senha : ")
 
-            while not verify_user_and_password(usuarios, cpf, senha):
+            while not verify_user_and_password(users, cpf, password):
                 print("O CPF ou senha são invalidos!")
                 cpf = input("CPF: ")
-                senha = input("Senha : ")
+                password = input("Senha : ")
 
-            user, user_type = get_user_with_type(usuarios, cpf, senha)
-            # print("User: {}, User_Type: {}".format(user.nome, user_type))
+            user, user_type = get_user_with_type(users, cpf, password)
 
             if user_type == 1:
-                menu_admin(usuarios, user, events)
+                menu_admin(users, user, events)
             elif user_type == 2:
                 event_admin(user)
             elif user_type == 3:
-                event_participant(user,usuarios)
+                event_participant(user, users)
 
-        elif opcao == 3:
+        elif option == 3:
             print("Obrigado por usar o sistema")
             break
 
