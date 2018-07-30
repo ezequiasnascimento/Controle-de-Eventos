@@ -1,0 +1,11 @@
+def menu_admin(user):
+    print("-- Menu Administrador do Sistema --")
+    print("1 - Cadastrar administrador de sistema")
+    print("2 - Cadastrar administrador de evento")
+    print("3 - Cadastrar evento")
+    print("4 - Remover evento")
+    print("5 - Remover usuário")
+    print("6 - Listar eventos")
+    print("7 - Exibir relatórios do sistema")
+    print("8 - Exibir relatório por evento")
+    print("9 - Deslogar")
