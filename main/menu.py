@@ -29,24 +29,30 @@ def menu():
     while True:
         apresentacao()
         opcao = int(input())
+
         if opcao == 1:
             print("Criar Conta")
             participante = Participante()
             participante.create_account(usuarios)
             usuarios[3].append(participante)
+
         elif opcao == 2:
             print("Realizar login")
             cpf = input("CPF: ")
             senha = input("Senha : ")
-            for x in usuarios:
-                if x.cpf == cpf and x.senha == senha:
-                    print("logado com sucesso, aqui vai suceder os proximos metodos ")
-                else:
-                    print("Usuario não encontrado")
+
+            while not verify_user_and_password(usuarios, cpf, senha):
+                print("O CPF ou senha são invalidos!")
+                cpf = input("CPF: ")
+                senha = input("Senha : ")
+
+            user, user_type = get_user_with_type(usuarios, cpf, senha)
+            print("User: {}, User_Type: {}".format(user.nome, user_type))
 
         elif opcao == 3:
             print("Obrigado por usar o sistema")
             break
+
         else:
             print("Opção invalida !!!")
         print("\n\n\n")

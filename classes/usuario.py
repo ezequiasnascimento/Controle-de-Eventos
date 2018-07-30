@@ -20,6 +20,7 @@ class Usuario(object):
 
         self.cpf = input("CPF: ")
         while verify_cpf(users, self.cpf):
+            print("O CPF já está cadastrado tente novamente")
             self.cpf = input("CPF: ")
 
         self.endereco = input("Endereço: ")
@@ -37,9 +38,44 @@ def verify_cpf(users, cpf):
         for j in list_users:
             if j.cpf == cpf:
                 cpf_exists = True
-                print("O CPF já está cadastrado tente novamente")
                 break
 
         i += 1
 
     return cpf_exists
+
+
+def verify_user_and_password(users, cpf, password):
+    user_is_valid = False
+    list_type = len(users)
+    i = 1
+
+    while i <= list_type:
+        list_users = users[i]
+        for j in list_users:
+            if j.cpf == cpf and j.senha == password:
+                user_is_valid = True
+                break
+
+        i += 1
+
+    return user_is_valid
+
+
+def get_user_with_type(users, cpf, password):
+    user = ""
+    user_type = ""
+    list_type = len(users)
+    i = 1
+
+    while i <= list_type:
+        list_users = users[i]
+        for j in list_users:
+            if j.cpf == cpf and j.senha == password:
+                user = j
+                user_type = i
+                break
+
+        i += 1
+
+    return user, user_type
