@@ -1,7 +1,7 @@
-from classes.admin_sistema import relatorio_sistema
-from classes.evento import *
-from classes.participantes import Participante
-from classes.usuario import remove_user
+from classes.user_admin import system_report
+from classes.event import *
+from classes.participant import Participant
+from classes.user import remove_user
 
 
 def menu_admin(users, user, events):
@@ -22,48 +22,53 @@ def menu_admin(users, user, events):
 
         if option == 1:
             print("Digite as informações do novo administrador")
-            new_user = Participante()
+            new_user = Participant()
             new_user.create_account(users)
             users[1].append(new_user)
 
         elif option == 2:
             print("Digite as informações do novo administrador de eventos")
-            new_user = Participante()
+            new_user = Participant()
             new_user.create_account(users)
             users[2].append(new_user)
 
         elif option == 3:
             print("Insira as informações do novo evento")
-            event = Evento()
-            event.criar_evento(users)
+            event = Event()
+            event.create_event(users)
             events.append(event)
 
         elif option == 4:
             print("Remover Evento")
             print("digite a sigla do evento")
-            sigla = input()
+            title = input()
             for x in events:
-                if x.sigla == sigla:
+                if x.title == title:
                     events.remove(x)
             else:
                 print("Sigla invalida")
 
         elif option == 5:
-            #TODO Finalizar método de remoção
+            # TODO Finalizar método de remoção
             remove_user(users, events, input("Informe o CPF do usuário que gostaria de remover"))
 
         elif option == 6:
-            listar_eventos(events)
+            list_events(events)
+
         elif option == 7:
-            relatorio_sistema(events,users)
+            system_report(events, users)
 
         elif option == 8:
-            sigla = input("Sigla do evento ")
+            have_event = False
+            title = input("Sigla do evento ")
             print("Relatorio")
             for y in events:
-                if y.sigla == sigla:
-                    y.view_evento()
-                else:
-                    print("Sigla não encontrada!!")
+                if y.title == title:
+                    have_event = True
+                    y.event_viewer()
+
+            if not have_event:
+                print("Sigla não encontrada")
+
         elif option == 9:
             option = 9
