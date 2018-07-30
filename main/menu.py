@@ -53,7 +53,7 @@ def menu():
             # print("User: {}, User_Type: {}".format(user.nome, user_type))
 
             if user_type == 1:
-                menu_admin(user)
+                menu_admin(usuarios, user)
             elif user_type == 2:
                 event_admin(user)
             elif user_type == 3:

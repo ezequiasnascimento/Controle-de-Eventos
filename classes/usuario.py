@@ -45,6 +45,24 @@ def verify_cpf(users, cpf):
     return cpf_exists
 
 
+def turn_user_in_adm(users, user_cpf):
+    list_type = len(users)
+
+    # A lista 1 é ignorada já que contém os adms
+    i = 2
+
+    while i <= list_type:
+        list_users = users[i]
+        for j in list_users:
+            if j.cpf == user_cpf:
+                temp = j
+                users[i].remove(temp)
+                users[1].append(temp)
+                break
+
+        i += 1
+
+
 def verify_user_and_password(users, cpf, password):
     user_is_valid = False
     list_type = len(users)
