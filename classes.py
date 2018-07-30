@@ -40,5 +40,22 @@ class Evento(object):
         self.valor_pro = valor_pro
         self.valor_estu = valor_estu
         self.participantes = []
+    def criar_evento(self):
+        self.nome_evento = input("Nome do evento: ")
+        self.sigla = input("digite uma sigla: ")
+        self.descricao = input("De uma breve descricao do evento :")
+        self.local = input("Informe o local: ")
+        self.data_inicio = input("Data de inicio: ")
+        self.data_fim = input("data do fim do evento")
+        self.admin_evento = input("Informe o adiministrador do evento: ")
+        self.valor_pro = input("Informe o valor para participantes profissional: ")
+        self.valor_estu = input("Informe o valor para estudantes:" )
+        self.participantes = []
+class Admin_sistema(Usuario):
+    pass
+class Admin_evento(Usuario):
+    pass
+class Participante(Usuario):
+    pass
 
 
