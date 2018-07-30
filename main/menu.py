@@ -1,5 +1,8 @@
 from classes.participantes import *
 from classes.admin_sistema import *
+from menus.menu_admin import menu_admin
+from menus.menu_event import event_admin
+from menus.menu_event_participant import event_participant
 
 usuarios = {1: [], 2: [], 3: []}
 
@@ -47,7 +50,14 @@ def menu():
                 senha = input("Senha : ")
 
             user, user_type = get_user_with_type(usuarios, cpf, senha)
-            print("User: {}, User_Type: {}".format(user.nome, user_type))
+            # print("User: {}, User_Type: {}".format(user.nome, user_type))
+
+            if user_type == 1:
+                menu_admin(user)
+            elif user_type == 2:
+                event_admin(user)
+            elif user_type == 3:
+                event_participant(user)
 
         elif opcao == 3:
             print("Obrigado por usar o sistema")
