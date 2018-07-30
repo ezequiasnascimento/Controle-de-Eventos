@@ -4,20 +4,18 @@ class Usuario(object):
     endereco = None
     data_nasc = None
     senha = None
-    tipo = None
 
     def __init__(self, nome: object = None, cpf: object = None, endereco: object = None, data_nasc: object = None,
-                 senha: object = None, tipo: object = None) -> object:
+                 senha: object = None) -> object:
         self.nome = nome
         self.cpf = cpf
         self.endereco = endereco
         self.data_nasc = data_nasc
         self.senha = senha
-        self.tipo = tipo
 
-    def create_account(self, users):
+
+    def create_account(self, users ):
         self.nome = input("Nome: ")
-
         self.cpf = input("CPF: ")
         while verify_cpf(users, self.cpf):
             print("O CPF já está cadastrado tente novamente")

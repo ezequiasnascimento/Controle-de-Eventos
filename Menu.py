@@ -1,4 +1,8 @@
-from classes import *
+from classes import admin_sistema
+from classes.admin_sistema import Admin_sistema
+from classes.participantes import Participante
+
+
 def apresentacao():
     print("1 - Criar conta")
     print("2 - Realizar login")
@@ -14,7 +18,7 @@ def Menu():
         if opcao == 1:
             print("Criar Conta")
             participante = Participante()
-            participante.criar_conta()
+            participante.create_account(usuarios)
             usuarios[3].append(participante)
 
         elif opcao == 2:
@@ -39,8 +43,9 @@ while True:
     print("No momento o sistema está sem um adiministrador")
     print("Por favor digite suas informações para adiministrar o sistema")
     admin_sistema = Admin_sistema()
-    admin_sistema.criar_conta()
+    admin_sistema.create_admin()
     usuarios[1].append(admin_sistema)
     print("\n\n\n")
     break
 Menu()
+print(usuarios)
