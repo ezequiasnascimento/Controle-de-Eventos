@@ -1,5 +1,6 @@
 from classes.evento import Evento
 from classes.participantes import Participante
+from classes.usuario import remove_user
 
 
 def menu_admin(users, user, events):
@@ -36,4 +37,21 @@ def menu_admin(users, user, events):
             event.criar_evento(users)
             events.append(event)
 
+        elif option == 4:
+            pass
 
+        elif option == 5:
+            #TODO Finalizar método de remoção
+            remove_user(users, events, input("Informe o CPF do usuário que gostaria de remover"))
+
+        elif option == 6:
+            pass
+
+        elif option == 7:
+            pass
+
+        elif option == 8:
+            pass
+
+        elif option == 9:
+            option = 9

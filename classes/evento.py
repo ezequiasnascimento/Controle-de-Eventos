@@ -42,3 +42,7 @@ class Evento(object):
         self.valor_pro = input("Informe o valor para participantes profissional: ")
         self.valor_estu = input("Informe o valor para estudantes: ")
         self.participantes = []
+
+
+def remove_user_from_events(user, events):
+    pass

@@ -1,3 +1,6 @@
+from classes.evento import remove_user_from_events
+
+
 class Usuario(object):
     nome = None
     cpf = None
@@ -43,6 +46,26 @@ def verify_cpf(users, cpf):
         i += 1
 
     return cpf_exists
+
+
+def remove_user(users, events, cpf):
+    list_type = len(users)
+    user = None
+    i = 1
+
+    while i <= list_type:
+        list_users = users[i]
+        for j in list_users:
+            if j.cpf == cpf:
+                user = j
+                break
+
+        i += 1
+
+    #TODO Código que realiza a procura do CPF em todos os eventos
+    remove_user_from_events(user, events)
+
+    return user
 
 
 def verify_event_adm_user_cpf(users, cpf):
