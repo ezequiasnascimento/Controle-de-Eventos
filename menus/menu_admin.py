@@ -1,7 +1,8 @@
+from classes.evento import Evento
 from classes.participantes import Participante
 
 
-def menu_admin(users, user):
+def menu_admin(users, user, events):
     option = None
 
     while option != 9:
@@ -28,4 +29,11 @@ def menu_admin(users, user):
             new_user = Participante()
             new_user.create_account(users)
             users[2].append(new_user)
+
+        elif option == 3:
+            print("Insira as informações do novo evento")
+            event = Evento()
+            event.criar_evento(users)
+            events.append(event)
+
 

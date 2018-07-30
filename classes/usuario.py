@@ -45,6 +45,20 @@ def verify_cpf(users, cpf):
     return cpf_exists
 
 
+def verify_event_adm_user_cpf(users, cpf):
+    cpf_exists = False
+
+    if users is not None or len(users[2]) != 0:
+        for j in users[2]:
+            if j.cpf == cpf:
+                cpf_exists = True
+                break
+    else:
+        print("Não existem administradores de eventos cadastrados no sistema")
+
+    return cpf_exists
+
+
 def turn_user_in_adm(users, user_cpf):
     list_type = len(users)
 

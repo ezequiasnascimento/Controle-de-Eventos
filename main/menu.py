@@ -5,6 +5,7 @@ from menus.menu_event import event_admin
 from menus.menu_event_participant import event_participant
 
 usuarios = {1: [], 2: [], 3: []}
+events = []
 
 
 def apresentacao():
@@ -53,7 +54,7 @@ def menu():
             # print("User: {}, User_Type: {}".format(user.nome, user_type))
 
             if user_type == 1:
-                menu_admin(usuarios, user)
+                menu_admin(usuarios, user, events)
             elif user_type == 2:
                 event_admin(user)
             elif user_type == 3:
