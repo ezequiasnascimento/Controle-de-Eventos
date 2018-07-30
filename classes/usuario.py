@@ -28,7 +28,14 @@ class Usuario(object):
         self.data_nasc = input("Data de Nascimento: ")
         self.senha = input("Senha: ")
 
-
+    def change_data_user(self,users) -> object:
+        """
+        :type users: list
+        """
+        self.nome = input("Nome: ")
+        self.endereco = input("Endereço: ")
+        self.data_nasc = input("Data de Nascimento: ")
+        self.senha = input("Senha: ")
 def verify_cpf(users, cpf):
     cpf_exists = False
     list_type = len(users)
@@ -76,6 +83,7 @@ def verify_event_adm_user_cpf(users, cpf):
                 break
     else:
         print("Não existem administradores de eventos cadastrados no sistema")
+
 
     return cpf_exists
 

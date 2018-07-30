@@ -5,6 +5,9 @@ from menus.menu_event import event_admin
 from menus.menu_event_participant import event_participant
 
 usuarios = {1: [], 2: [], 3: []}
+# 1 referencia ao adiministrador do sistema
+# 2 referencia ao adiminustrador do evento
+# 3 referencia aos participantes
 events = []
 
 
@@ -26,9 +29,7 @@ def define_admin():
         break
 
 
-# 1 referencia ao adiministrador do sistema
-# 2 referencia ao adiminustrador do evento
-# 3 referencia aos participantes
+
 def menu():
     while True:
         apresentacao()
@@ -58,7 +59,7 @@ def menu():
             elif user_type == 2:
                 event_admin(user)
             elif user_type == 3:
-                event_participant(user)
+                event_participant(user,usuarios)
 
         elif opcao == 3:
             print("Obrigado por usar o sistema")

@@ -1,4 +1,5 @@
-from classes.evento import Evento
+from classes.admin_sistema import relatorio_sistema
+from classes.evento import *
 from classes.participantes import Participante
 from classes.usuario import remove_user
 
@@ -38,20 +39,31 @@ def menu_admin(users, user, events):
             events.append(event)
 
         elif option == 4:
-            pass
+            print("Remover Evento")
+            print("digite a sigla do evento")
+            sigla = input()
+            for x in events:
+                if x.sigla == sigla:
+                    events.remove(x)
+            else:
+                print("Sigla invalida")
 
         elif option == 5:
             #TODO Finalizar método de remoção
             remove_user(users, events, input("Informe o CPF do usuário que gostaria de remover"))
 
         elif option == 6:
-            pass
-
+            listar_eventos(events)
         elif option == 7:
-            pass
+            relatorio_sistema(events,users)
 
         elif option == 8:
-            pass
-
+            sigla = input("Sigla do evento ")
+            print("Relatorio")
+            for y in events:
+                if y.sigla == sigla:
+                    y.view_evento()
+                else:
+                    print("Sigla não encontrada!!")
         elif option == 9:
             option = 9
