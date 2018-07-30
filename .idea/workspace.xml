@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="968e8d79-ac57-42c7-ae06-35d9cc2e352e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/usuario.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/usuario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/menu.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,28 +46,52 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-984293459">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="781" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="781" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/usuario.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21">
-              <caret line="47" column="4" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+            <state relative-caret-position="612">
+              <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
               <folding>
-                <marker date="1532914194194" expanded="true" signature="660:665" ph="..." />
-                <marker date="1532914194194" expanded="true" signature="2093:2103" ph="..." />
-                <marker date="1532914194194" expanded="true" signature="2131:2143" ph="..." />
+                <marker date="1532924701592" expanded="true" signature="863:864" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Menu.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/menu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+            <state relative-caret-position="465">
+              <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+                <marker date="1532924347608" expanded="true" signature="627:629" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,10 +113,12 @@
       <list>
         <option value="$PROJECT_DIR$/classes.py" />
         <option value="$PROJECT_DIR$/Menu.py" />
+        <option value="$PROJECT_DIR$/main/menu.py" />
+        <option value="$PROJECT_DIR$/classes/usuario.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="450" />
@@ -107,8 +133,18 @@
         <subPane>
           <expand>
             <path>
-              <item name="Trabalho" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trabalho" type="462c0819:PsiDirectoryNode" />
+              <item name="Controle-de-Eventos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Controle-de-Eventos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Controle-de-Eventos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Controle-de-Eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Controle-de-Eventos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Controle-de-Eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,23 +258,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24037954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3290993" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290993" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290993" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3290993" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32864866" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32972974" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.30831409" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.30810812" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -252,22 +288,47 @@
     <option name="LAST_COMMIT_MESSAGE" value="Corrigindo problema na opção 3" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classes.py">
+    <entry file="file://$PROJECT_DIR$/classes.py" />
+    <entry file="file://$PROJECT_DIR$/Menu.py" />
+    <entry file="file://$PROJECT_DIR$/classes/evento.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="47" column="4" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+        <state relative-caret-position="323">
+          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/admin_evento.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/participantes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
           <folding>
-            <marker date="1532914194194" expanded="true" signature="660:665" ph="..." />
-            <marker date="1532914194194" expanded="true" signature="2093:2103" ph="..." />
-            <marker date="1532914194194" expanded="true" signature="2131:2143" ph="..." />
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1532924347608" expanded="true" signature="627:629" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Menu.py">
+    <entry file="file://$PROJECT_DIR$/classes/usuario.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+        <state relative-caret-position="612">
+          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+          <folding>
+            <marker date="1532924701592" expanded="true" signature="863:864" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

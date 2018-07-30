@@ -1,14 +1,13 @@
 from classes.participantes import *
 from classes.admin_sistema import *
 
+usuarios = {1: [], 2: [], 3: []}
+
 
 def apresentacao():
     print("1 - Criar conta")
     print("2 - Realizar login")
     print("3 - Sair do sistema")
-
-
-usuarios = {1: [], 2: [], 3: []}
 
 
 def define_admin():
@@ -17,7 +16,7 @@ def define_admin():
         print("No momento o sistema está sem um adiministrador")
         print("Por favor digite suas informações para adiministrar o sistema")
         admin_sistema = Admin_sistema()
-        admin_sistema.criar_conta()
+        admin_sistema.create_account(usuarios)
         usuarios[1].append(admin_sistema)
         print("\n\n\n")
         break
@@ -33,7 +32,7 @@ def menu():
         if opcao == 1:
             print("Criar Conta")
             participante = Participante()
-            participante.criar_conta()
+            participante.create_account(usuarios)
             usuarios[3].append(participante)
         elif opcao == 2:
             print("Realizar login")
