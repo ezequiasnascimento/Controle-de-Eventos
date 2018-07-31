@@ -14,7 +14,7 @@ def event_participant(user, usuarios):
         option = int(input())
         if option == 1:
             print("OBS: O CPF não pode ser trocado")
-            user.change_data_user(usuarios)
+            user.change_data_user()
             print("Dados alterados com sucesso! ")
         elif option == 4:
             pass

@@ -33,7 +33,7 @@ class User(object):
         self.birth = input("Data de Nascimento: ")
         self.password = input("Senha: ")
 
-    def change_data_user(self, users) -> object:
+    def change_data_user(self) -> object:
         self.name = input("Nome: ")
         self.address = input("Endereço: ")
         self.birth = input("Data de Nascimento: ")
@@ -71,7 +71,6 @@ def remove_user(users, events, cpf):
 
         i += 1
 
-    # TODO Código que realiza a procura do CPF em todos os eventos
     remove_user_from_events(user, events)
 
     return user

@@ -9,6 +9,7 @@ def menu_admin(users, user, events):
 
     while option != 9:
         print("\n-- Menu Administrador do Sistema --")
+        print("Bem vindo: {}".format(user.name))
         print("1 - Cadastrar administrador de sistema")
         print("2 - Cadastrar administrador de evento")
         print("3 - Cadastrar evento")
@@ -49,7 +50,7 @@ def menu_admin(users, user, events):
                 print("Sigla invalida")
 
         elif option == 5:
-            # TODO Finalizar método de remoção
+            #TODO Implementar método para remover usuários
             remove_user(users, events, input("Informe o CPF do usuário que gostaria de remover"))
 
         elif option == 6:
@@ -72,3 +73,6 @@ def menu_admin(users, user, events):
 
         elif option == 9:
             option = 9
+
+        else:
+            print("Opção invalida")

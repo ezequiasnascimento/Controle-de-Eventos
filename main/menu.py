@@ -1,7 +1,7 @@
 from classes.participant import *
 from classes.user_admin import *
 from menus.menu_admin import menu_admin
-from menus.menu_event import event_admin
+from menus.menu_event_admin import event_admin
 from menus.menu_event_participant import event_participant
 
 # 1 referencia ao adiministrador do sistema
@@ -55,7 +55,7 @@ def menu():
             if user_type == 1:
                 menu_admin(users, user, events)
             elif user_type == 2:
-                event_admin(user)
+                event_admin(users, events, user)
             elif user_type == 3:
                 event_participant(user, users)
 
@@ -64,8 +64,8 @@ def menu():
             break
 
         else:
-            print("Opção invalida !!!")
-        print("\n\n\n")
+            print("Opção invalida!!!")
+        print("\n")
 
 
 define_admin()
