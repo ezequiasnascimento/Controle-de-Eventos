@@ -57,7 +57,7 @@ def menu():
             elif user_type == 2:
                 event_admin(users, events, user)
             elif user_type == 3:
-                event_participant(user, users)
+                event_participant(user, events)
 
         elif option == 3:
             print("Obrigado por usar o sistema")

@@ -73,3 +73,15 @@ def list_events(events):
     cont = 0
     for x in events:
         print("Evento de Numero ", cont, " Sigla: ", x.title, " Nome: ", x.name_event)
+
+
+def get_user_events(events, cpf):
+    pass
+
+
+def get_event_details(event, event_title):
+    pass
+
+
+def register_user_in_event(event, cpf):
+    pass
