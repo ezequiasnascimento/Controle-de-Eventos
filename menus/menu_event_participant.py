@@ -24,10 +24,23 @@ def event_participant(user, events):
             get_user_events(events, user.cpf)
 
         elif option == 3:
-            get_event_details(events, input("DIgite a sigla do evento: "))
+            get_event_details(events, input("Digite a sigla do evento: "))
 
         elif option == 4:
-            register_user_in_event(events, user.cpf)
+            event = get_event(events, input("Digite a sigla do evento: "))
+
+            if event is not None:
+                event.event_viewer_without_users()
+
+                if not user_exist_in_list(event.participants, user.cpf):
+                    print("\n-- Ingressos --")
+                    print("1 - Profissional: {}".format(event.value_pro))
+                    print("2 - Estudante:    {}".format(event.value_est))
+                    pay_type = int(input("Digite o tipo de Ingresso: "))
+                    register_user_in_event(event, user.cpf, pay_type)
+
+                else:
+                    print("O usuário já está cadastrado no evento")
 
         elif option == 5:
             option = 5

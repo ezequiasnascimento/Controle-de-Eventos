@@ -1,4 +1,4 @@
-from classes.participant import *
+from classes.user import *
 from classes.user_admin import *
 from menus.menu_admin import menu_admin
 from menus.menu_event_admin import event_admin
@@ -36,9 +36,9 @@ def menu():
 
         if option == 1:
             print("Criar Conta")
-            participante = Participant()
-            participante.create_account(users)
-            users[3].append(participante)
+            participant = User()
+            participant.create_account(users)
+            users[3].append(participant)
 
         elif option == 2:
             print("Realizar login")

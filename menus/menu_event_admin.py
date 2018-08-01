@@ -29,7 +29,7 @@ def event_admin(users, events, user):
                 input("Digite o CPF do participante: "))
 
         elif option == 4:
-            event_report(input("Digite a sigla do evento: "), events, user.cpf)
+            event_report(input("Digite a sigla do evento: "), events, users[3], user.cpf)
 
         elif option == 5:
             option = 5

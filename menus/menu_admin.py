@@ -1,7 +1,7 @@
+from classes.admin_event import event_report
 from classes.user_admin import system_report
 from classes.event import *
-from classes.participant import Participant
-from classes.user import remove_user
+from classes.user import *
 
 
 def menu_admin(users, user, events):
@@ -23,13 +23,13 @@ def menu_admin(users, user, events):
 
         if option == 1:
             print("Digite as informações do novo administrador")
-            new_user = Participant()
+            new_user = User()
             new_user.create_account(users)
             users[1].append(new_user)
 
         elif option == 2:
             print("Digite as informações do novo administrador de eventos")
-            new_user = Participant()
+            new_user = User()
             new_user.create_account(users)
             users[2].append(new_user)
 
@@ -57,19 +57,11 @@ def menu_admin(users, user, events):
             list_events(events)
 
         elif option == 7:
+            #TODO Implementar a verificação de arrecadação de todos os eventos
             system_report(events, users)
 
         elif option == 8:
-            have_event = False
-            title = input("Sigla do evento ")
-            print("Relatorio")
-            for y in events:
-                if y.title == title:
-                    have_event = True
-                    y.event_viewer()
-
-            if not have_event:
-                print("Sigla não encontrada")
+            event_report(input("Digite a sigla do evento: "), events, users[3], user.cpf)
 
         elif option == 9:
             option = 9
