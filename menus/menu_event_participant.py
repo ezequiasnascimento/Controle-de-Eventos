@@ -6,7 +6,7 @@ def event_participant(user, events):
 
     while option != 5:
 
-        print("-- Menu do Participante --")
+        print("\n-- Menu do Participante --")
         print("Bem vindo(a) {}".format(user.name))
         print("1 - Alterar dados pessoais")
         print("2 - Listar eventos já inscritos")

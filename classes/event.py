@@ -71,8 +71,14 @@ class Event(object):
         print("Valor de participante estudante: ", self.value_est)
 
 
-def remove_user_from_events(event, events):
-    pass
+def remove_user_from_events(events, cpf):
+    if events > 0:
+        for i in events:
+            for j in i.participants:
+                if j.cpf == cpf:
+                    i.participants.remove(j)
+    else:
+        print("Não existem eventos disponíveis para remove-lo")
 
 
 def list_events(events):
