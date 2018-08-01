@@ -14,7 +14,6 @@ class User(object):
                  address: object = None,
                  birth: object = None,
                  password: object = None) -> object:
-
         self.name = name
         self.cpf = cpf
         self.address = address
@@ -33,7 +32,7 @@ class User(object):
         self.birth = input("Data de Nascimento: ")
         self.password = input("Senha: ")
 
-    def change_data_user(self, users) -> object:
+    def change_data_user(self) -> object:
         self.name = input("Nome: ")
         self.address = input("Endereço: ")
         self.birth = input("Data de Nascimento: ")
@@ -42,10 +41,10 @@ class User(object):
 
 def verify_cpf(users, cpf):
     cpf_exists = False
-    list_type = len(users)
+    list_size = len(users)
     i = 1
 
-    while i <= list_type:
+    while i <= list_size:
         list_users = users[i]
         for j in list_users:
             if j.cpf == cpf:
@@ -57,24 +56,29 @@ def verify_cpf(users, cpf):
     return cpf_exists
 
 
-def remove_user(users, events, cpf):
-    list_type = len(users)
-    user = None
-    i = 1
+def verify_exist_participant(users, cpf):
+    cpf_exists = False
 
-    while i <= list_type:
-        list_users = users[i]
-        for j in list_users:
-            if j.cpf == cpf:
-                user = j
+    for i in users:
+        if i.cpf == cpf:
+            cpf_exists = True
+            break
+
+    return cpf_exists
+
+
+def remove_user(users, events, cpf):
+    if verify_exist_participant(users[3], cpf):
+        remove_user_from_events(events, cpf)
+
+        for i in users[3]:
+            if i.cpf == cpf:
+                users[3].remove(i)
+                print("Usuário removido da lista de participantes")
                 break
 
-        i += 1
-
-    # TODO Código que realiza a procura do CPF em todos os eventos
-    remove_user_from_events(user, events)
-
-    return user
+    else:
+        print("O usuário digitado não existe na lista de participantes")
 
 
 def verify_event_adm_user_cpf(users, cpf):

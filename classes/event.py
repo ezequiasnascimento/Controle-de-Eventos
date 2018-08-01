@@ -1,3 +1,6 @@
+from classes.participant import Participant
+
+
 class Event(object):
     name_event = None
     title = None
@@ -51,6 +54,12 @@ class Event(object):
         self.participants = []
 
     def event_viewer(self):
+        self.event_viewer_without_users()
+
+        for x in self.participants:
+            print("Nome: ", x.name, "CPF: ", x.cpf)
+
+    def event_viewer_without_users(self):
         print("Nome: ", self.name_event)
         print("Sigla: ", self.title)
         print("Descrição :", self.description)
@@ -61,15 +70,70 @@ class Event(object):
         print("Valor do participante profissional: ", self.value_pro)
         print("Valor de participante estudante: ", self.value_est)
 
-        for x in self.participants:
-            print("Nome: ", x.nome, "CPF: ", x.cpf)
 
-
-def remove_user_from_events(event, events):
-    pass
+def remove_user_from_events(events, cpf):
+    if events > 0:
+        for i in events:
+            for j in i.participants:
+                if j.cpf == cpf:
+                    i.participants.remove(j)
+    else:
+        print("Não existem eventos disponíveis para remove-lo")
 
 
 def list_events(events):
     cont = 0
     for x in events:
         print("Evento de Numero ", cont, " Sigla: ", x.title, " Nome: ", x.name_event)
+
+
+def get_user_events(events, cpf):
+    user_event_list = []
+
+    for i in events:
+        for j in i.participants:
+            if j.cpf == cpf:
+                user_event_list.append(i)
+
+    if len(user_event_list) > 0:
+        for i in user_event_list:
+            print("{} - {}".format(i.name_event, i.title))
+    else:
+        print("O usuário não está cadastrado em nenhum evento!")
+
+
+def get_event_details(event, event_title):
+    for i in event:
+        if i.title == event_title:
+            i.event_viewer_without_users()
+            break
+
+
+def register_user_in_event(event, cpf, pay_type):
+    event.participants.append(Participant(cpf, pay_type))
+    print("Você foi cadastrado no evento com sucesso")
+
+
+def user_exist_in_list(participants, cpf):
+    for i in participants:
+        if i.cpf == cpf:
+            return True
+
+    return False
+
+
+def get_event(events, event_title):
+    has_event = False
+    event = None
+
+    for i in events:
+        if i.title == event_title:
+            has_event = True
+            event = i
+
+    if not has_event:
+        print("Não existe evento com esse marcador")
+        # Esse retorno voltará nulo caso não exista
+        return event
+    else:
+        return event
