@@ -11,6 +11,38 @@ class UserAdmin(User):
 
 
 def system_report(events, users):
-    print("No momento há ", len(users[1]), " Administradores do Sistema")
-    print("Administradores de Eventos: ", len(users[2]))
-    print("Participantes de Eventos: ", len(users[3]))
+    total_pro, total_est, total_collected = get_participants_by_type(events)
+
+    print("Administradores do Sistema: {}".format(len(users[1])))
+    print("Administradores de Eventos: {}".format(len(users[2])))
+    print("Participantes Profissionais: {}".format(total_pro))
+    print("Participantes EStudantes: {}".format(total_est))
+    print("Total de Eventos: {}".format(len(events)))
+    print("Total arrecadado: {}".format(total_collected))
+
+
+def get_participants_by_type(events):
+    total_pro = 0
+    total_est = 0
+    total_collected = 0
+
+    for i in events:
+        num_of_pro, num_of_est, total_event_price = get_users_by_type(i.participants, i.valor_pro, i.valor_estu)
+        total_pro = total_pro + num_of_pro
+        total_est = total_est + num_of_est
+        total_collected = total_collected + total_event_price
+
+    return total_pro, total_est, total_collected
+
+
+def get_users_by_type(participants, price_pro, price_est):
+    num_of_pro = 0
+    num_of_est = 0
+
+    for i in participants:
+        if i.user_type == 1:
+            num_of_pro += 1
+        elif i.user_type == 2:
+            num_of_est += 1
+
+    return num_of_pro, num_of_est, ((price_pro * num_of_pro) + (price_est * num_of_est))

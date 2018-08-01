@@ -50,14 +50,12 @@ def menu_admin(users, user, events):
                 print("Sigla invalida")
 
         elif option == 5:
-            #TODO Implementar método para remover usuários
             remove_user(users, events, input("Informe o CPF do usuário que gostaria de remover"))
 
         elif option == 6:
             list_events(events)
 
         elif option == 7:
-            #TODO Implementar a verificação de arrecadação de todos os eventos
             system_report(events, users)
 
         elif option == 8:
