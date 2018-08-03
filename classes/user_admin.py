@@ -27,7 +27,9 @@ def get_participants_by_type(events):
     total_collected = 0
 
     for i in events:
-        num_of_pro, num_of_est, total_event_price = get_users_by_type(i.participants, i.valor_pro, i.valor_estu)
+        num_of_pro, num_of_est, total_event_price = get_users_by_type(i.participants,
+                                                                      float(i.value_pro),
+                                                                      float(i.value_est))
         total_pro = total_pro + num_of_pro
         total_est = total_est + num_of_est
         total_collected = total_collected + total_event_price

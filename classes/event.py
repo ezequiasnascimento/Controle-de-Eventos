@@ -21,8 +21,8 @@ class Event(object):
                  start_date=None,
                  end_date=None,
                  cpf_admin_event=None,
-                 valor_pro=None,
-                 valor_estu=None, participantes=[]):
+                 value_pro=None,
+                 value_estu=None, participantes=[]):
 
         self.name_event = name_event
         self.title = title
@@ -31,8 +31,8 @@ class Event(object):
         self.start_date = start_date
         self.end_date = end_date
         self.cpf_admin_event = cpf_admin_event
-        self.value_pro = valor_pro
-        self.value_est = valor_estu
+        self.value_pro = value_pro
+        self.value_est = value_estu
         self.participants = []
 
     def create_event(self, users):
