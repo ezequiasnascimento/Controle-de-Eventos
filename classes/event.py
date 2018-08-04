@@ -1,6 +1,7 @@
 from classes.participant import Participant
 
 
+
 class Event(object):
     name_event = None
     title = None
@@ -45,8 +46,18 @@ class Event(object):
         self.cpf_admin_event = input("Informe o CPF do adiministrador do evento: ")
 
         from classes.user import verify_event_adm_user_cpf
+        from classes.user import User
         while not verify_event_adm_user_cpf(users, self.cpf_admin_event):
             print("Não existe administrador de evento com esse CPF cadastrado!")
+            print("Deseja cadastra-lo? ")
+            print("SIM//NÂO")
+            resposta = input()
+            if resposta[0].upper() == "S":
+                new_admim_event = User()
+                new_admim_event.create_account(users)
+                users.append(new_admim_event)
+            else:
+                break
             self.cpf_admin_event = input("Informe o CPF do adiministrador do evento: ")
 
         self.value_pro = input("Informe o valor para participantes profissional: ")
